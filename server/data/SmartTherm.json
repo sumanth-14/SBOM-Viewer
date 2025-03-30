@@ -1,0 +1,17 @@
+{
+    "id": 3,
+    "name": "SmartTherm",
+    "category": "Smart Home",
+    "operatingSystem": "HomeOS 4.0",
+    "description": "Intelligent thermostat with learning capabilities",
+    "image": "https://via.placeholder.com/150",
+    "sbom": [
+      { "name": "HomeOS Core", "version": "4.0.2", "license": "Proprietary", "type": "Operating System" },
+      { "name": "WiFi Module", "version": "2.3.1", "license": "MIT", "type": "Connectivity" },
+      { "name": "Temperature Control", "version": "3.1.0", "license": "Proprietary", "type": "Application" },
+      { "name": "Learning Algorithm", "version": "2.2.4", "license": "Proprietary", "type": "Library" },
+      { "name": "Display Interface", "version": "1.5.0", "license": "Apache-2.0", "type": "UI" },
+      { "name": "Sensor Framework", "version": "2.0.3", "license": "BSD-3-Clause", "type": "Driver" },
+      { "name": "Energy Analytics", "version": "1.1.2", "license": "Proprietary", "type": "Utility" }
+    ]
+  }

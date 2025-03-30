@@ -1,0 +1,17 @@
+{
+    "id": 4,
+    "name": "Homey Pro",
+    "category": "Smart Home",
+    "operatingSystem": "LightOS 2.5",
+    "description": "Central hub for controlling smart lighting systems",
+    "image": "https://via.placeholder.com/150",
+    "sbom": [
+      { "name": "LightOS", "version": "2.5.3", "license": "Proprietary", "type": "Operating System" },
+      { "name": "ZigBee Stack", "version": "3.0.1", "license": "BSD-3-Clause", "type": "Connectivity" },
+      { "name": "WiFi Module", "version": "2.2.0", "license": "MIT", "type": "Connectivity" },
+      { "name": "Light Control App", "version": "4.1.2", "license": "Proprietary", "type": "Application" },
+      { "name": "Scheduling Engine", "version": "1.3.5", "license": "Proprietary", "type": "Library" },
+      { "name": "Scene Management", "version": "2.0.1", "license": "Proprietary", "type": "Library" },
+      { "name": "User Interface Kit", "version": "3.2.0", "license": "Apache-2.0", "type": "UI" }
+    ]
+  }
