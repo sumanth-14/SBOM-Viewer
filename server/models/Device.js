@@ -1,25 +1,21 @@
 const mongoose = require('mongoose');
 
-const DeviceSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
-    index: true
-  },
-  category: {
-    type: String,
-    required: true,
-    index: true
-  },
-  operatingSystem: {
-    type: String,
-    required: true,
-    index: true
-  },
-  sbom: {
-    type: Object,
-    required: true
-  }
+const deviceSchema = new mongoose.Schema({
+  name: { type: String },
+  category: { type: String },
+  operatingSystem: { type: String },  
+  spdxVersion: { type: String },
+  dataLicense: { type: String },
+  sbom: [
+    {
+      name: { type: String },
+      versionInfo: { type: String },
+      SPDXID: { type: String },
+      downloadLocation: { type: String },
+    }
+  ]
 });
 
-module.exports = mongoose.model('Device', DeviceSchema);
+const Device = mongoose.model('Device', deviceSchema);
+module.exports = Device;
+

@@ -1,0 +1,29 @@
+.device-details {
+    padding: 20px;
+  }
+  
+  .device-details h2 {
+    margin-bottom: 10px;
+  }
+  
+  .device-details p {
+    margin: 5px 0;
+  }
+  
+  .device-details table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .device-details th,
+  .device-details td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .device-details th {
+    background-color: #f5f5f5;
+  }
+  

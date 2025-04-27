@@ -66,6 +66,33 @@
     animation: spin 1s linear infinite;
     margin-bottom: 15px;
   }
+
+  .upload-section {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .upload-section input {
+    padding: 5px;
+  }
+  
+  .upload-section button {
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .upload-section button:disabled {
+    background-color: #aaa;
+    cursor: not-allowed;
+  }
+  
+  
   
   @keyframes spin {
     0% { transform: rotate(0deg); }

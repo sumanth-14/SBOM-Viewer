@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import DeviceList from '../components/DeviceList';
-import SearchBar from '../components/SearchBar';
+import SearchBar from '../src/components/SearchBar';
+import AddSBOMModal from '../src/components/AddSBOMModal';
+import HeroSection from '../src/components/HeroSection'; 
+import { Link } from 'react-router-dom';
 import './HomePage.css';
 
 const HomePage = () => {
   const [devices, setDevices] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const [searchParams, setSearchParams] = useState({
     name: '',
     category: '',
@@ -24,12 +28,12 @@ const HomePage = () => {
       if (searchParams.name) params.append('name', searchParams.name);
       if (searchParams.category) params.append('category', searchParams.category);
       if (searchParams.os) params.append('os', searchParams.os);
-      
+
       const res = await axios.get(`http://localhost:5000/api/devices?${params}`);
       setDevices(res.data);
-      setLoading(false);
     } catch (err) {
       console.error('Error fetching devices:', err);
+    } finally {
       setLoading(false);
     }
   };
@@ -38,21 +42,29 @@ const HomePage = () => {
     setSearchParams(params);
   };
 
+  const handleUploadSuccess = () => {
+    fetchDevices();
+  };
   return (
-    <div className="home-page">
-      <div className='homeheader'>
-      <h1>SBOM Viewer</h1>
-      <p>Search and view Software Bill of Materials for various devices</p></div>
-      
-      <SearchBar onSearch={handleSearch} />
-      
-      {loading ? (
-        <div className="loading">Loading devices...</div>
-      ) : (
-        <DeviceList devices={devices} />
+    <div className="home-page bg-[#415a77] min-h-screen ">
+      <HeroSection onUploadClick={() => setShowModal(true)} />
+
+      <div id="search" className="container mx-auto px-4 py-8">
+        <SearchBar onSearch={handleSearch} />
+
+        {loading ? (
+          <div className="text-center text-gray-500">Loading devices...</div>
+        ) : (
+          <DeviceList devices={devices} />
+        )}
+      </div>
+
+      {showModal && (
+        <AddSBOMModal onClose={() => setShowModal(false)} onUploadSuccess={handleUploadSuccess} />
       )}
     </div>
   );
 };
 
 export default HomePage;
+

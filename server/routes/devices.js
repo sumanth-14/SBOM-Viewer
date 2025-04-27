@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const Device = require('../models/Device');
 
-// Get all devices (with optional filters)
 router.get('/', async (req, res) => {
   try {
     const { name, category, os } = req.query;
@@ -27,7 +26,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Get device by ID
 router.get('/:id', async (req, res) => {
   try {
     const device = await Device.findById(req.params.id);

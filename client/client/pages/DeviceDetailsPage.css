@@ -85,7 +85,7 @@
     max-height: 500px;
   }
   
-  /* Responsive styles */
+  
   @media (max-width: 768px) {
     .device-meta {
       flex-direction: column;
