@@ -15,7 +15,7 @@ const ComparePage = () => {
   useEffect(() => {
     const fetchDevices = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/api/devices`);
+        const res = await axios.get(`${API_BASE_URL}api/devices`);
         setDevices(res.data);
       } catch (err) {
         console.error('Failed to fetch devices:', err);

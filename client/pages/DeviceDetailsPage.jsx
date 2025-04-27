@@ -11,7 +11,7 @@ const DeviceDetailsPage = () => {
   useEffect(() => {
     const fetchDevice = async () => {
       try {
-        const res = await axios.get(`${API_BASE_URL}/api/devices/${id}`);
+        const res = await axios.get(`${API_BASE_URL}api/devices/${id}`);
         setDevice(res.data);
       } catch (err) {
         console.error('Failed to fetch device:', err);

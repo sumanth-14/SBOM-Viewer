@@ -30,7 +30,7 @@ const HomePage = () => {
       if (searchParams.category) params.append('category', searchParams.category);
       if (searchParams.os) params.append('os', searchParams.os);
 
-      const res = await axios.get(`${API_BASE_URL}/api/devices?${params}`);
+      const res = await axios.get(`${API_BASE_URL}api/devices?${params}`);
       setDevices(res.data);
     } catch (err) {
       console.error('Error fetching devices:', err);
