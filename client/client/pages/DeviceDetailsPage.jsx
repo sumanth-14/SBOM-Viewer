@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from '../src/api';
 
 const DeviceDetailsPage = () => {
   const { id } = useParams();
@@ -10,7 +11,7 @@ const DeviceDetailsPage = () => {
   useEffect(() => {
     const fetchDevice = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/devices/${id}`);
+        const res = await axios.get(`${API_BASE_URL}/api/devices/${id}`);
         setDevice(res.data);
       } catch (err) {
         console.error('Failed to fetch device:', err);

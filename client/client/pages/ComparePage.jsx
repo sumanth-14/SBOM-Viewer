@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from '../src/api';
 
 const ComparePage = () => {
   const [devices, setDevices] = useState([]);
@@ -14,7 +15,7 @@ const ComparePage = () => {
   useEffect(() => {
     const fetchDevices = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/devices');
+        const res = await axios.get(`${API_BASE_URL}/api/devices`);
         setDevices(res.data);
       } catch (err) {
         console.error('Failed to fetch devices:', err);

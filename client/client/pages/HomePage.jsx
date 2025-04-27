@@ -6,6 +6,7 @@ import AddSBOMModal from '../src/components/AddSBOMModal';
 import HeroSection from '../src/components/HeroSection'; 
 import { Link } from 'react-router-dom';
 import './HomePage.css';
+import API_BASE_URL from '../src/api';
 
 const HomePage = () => {
   const [devices, setDevices] = useState([]);
@@ -29,7 +30,7 @@ const HomePage = () => {
       if (searchParams.category) params.append('category', searchParams.category);
       if (searchParams.os) params.append('os', searchParams.os);
 
-      const res = await axios.get(`http://localhost:5000/api/devices?${params}`);
+      const res = await axios.get(`${API_BASE_URL}/api/devices?${params}`);
       setDevices(res.data);
     } catch (err) {
       console.error('Error fetching devices:', err);
