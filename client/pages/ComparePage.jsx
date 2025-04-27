@@ -75,30 +75,30 @@ const ComparePage = () => {
 
   <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-6">
     <select
-      value={selectedDeviceA?.name || ''}
+      value={selectedDeviceA?._id || ''}
       onChange={(e) => {
-        const selected = devices.find(d => d.name === e.target.value);
+        const selected = devices.find(d => d._id === e.target.value);
         setSelectedDeviceA(selected || null);
       }}
       className="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 w-60"
     >
       <option value="">Select Device A</option>
       {devices.map(device => (
-        <option key={device._id} value={device.name}>{device.name}</option>
+        <option key={device._id} value={device._id}>{device.name}</option>
       ))}
     </select>
 
     <select
-      value={selectedDeviceB?.name || ''}
+      value={selectedDeviceB?._id || ''}
       onChange={(e) => {
-        const selected = devices.find(d => d.name === e.target.value);
+        const selected = devices.find(d => d._id === e.target.value);
         setSelectedDeviceB(selected || null);
       }}
       className="px-4 py-2 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 w-60"
     >
       <option value="">Select Device B</option>
       {devices.map(device => (
-        <option key={device._id} value={device.name}>{device.name}</option>
+        <option key={device._id} value={device._id}>{device.name}</option>
       ))}
     </select>
   </div>
