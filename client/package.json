@@ -10,6 +10,9 @@
     "preview": "vite preview",
     "start": "vite preview --port 4173"
   },
+  "engines": {
+  "node": "18.x"
+},
   "dependencies": {
     "@heroicons/react": "^2.2.0",
     "axios": "^1.8.4",
