@@ -35,8 +35,10 @@ const ComparePage = () => {
     }
 
     try {
-      const resA = await axios.get(`http://localhost:5000/api/devices/${selectedDeviceA._id}`);
-      const resB = await axios.get(`http://localhost:5000/api/devices/${selectedDeviceB._id}`);
+      // const resA = await axios.get(`http://localhost:5000/api/devices/${selectedDeviceA._id}`);
+      // const resB = await axios.get(`http://localhost:5000/api/devices/${selectedDeviceB._id}`);
+      const resA = await axios.get(`${API_BASE_URL}api/devices/${selectedDeviceA._id}`);
+      const resB = await axios.get(`${API_BASE_URL}api/devices/${selectedDeviceB._id}`);
       setDeviceAData(resA.data);
       setDeviceBData(resB.data);
     } catch (err) {
