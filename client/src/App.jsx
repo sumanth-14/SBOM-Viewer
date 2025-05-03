@@ -2,6 +2,7 @@ import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import StatisticsPage from '../pages/StatisticsPage';
 
 //import Header from '../components/Header.jsx';
 import HomePage from '../pages/HomePage';
@@ -18,6 +19,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/device/:id" element={<DeviceDetailsPage />} />
             <Route path="/compare" element={<ComparePage />} /> 
+            <Route path="/statistics" element={<StatisticsPage />} />
           </Routes>
         </main>
       </div>
