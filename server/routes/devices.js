@@ -19,7 +19,7 @@ router.get('/', async (req, res) => {
       query.operatingSystem = { $regex: os, $options: 'i' };
     }
     
-    const devices = await Device.find(query).select('name category operatingSystem');
+    const devices = await Device.find(query).select('name category operatingSystem sbom');
     res.json(devices);
   } catch (err) {
     res.status(500).json({ message: err.message });
