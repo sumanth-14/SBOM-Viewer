@@ -222,7 +222,7 @@ const StatisticsPage = () => {
         </div>
 
         {/* Chart 4: Top Common Packages */}
-        <div className="bg-white rounded p-4 shadow-md text-black col-span-full">
+        {/* <div className="bg-white rounded p-4 shadow-md text-black col-span-full">
           <h2 className="text-xl font-semibold mb-2">Top Common Packages</h2>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart layout="vertical" data={commonPackages}>
@@ -232,7 +232,34 @@ const StatisticsPage = () => {
               <Bar dataKey="count" fill="#0088FE" />
             </BarChart>
           </ResponsiveContainer>
-        </div>
+        </div> */}
+        {/* Common Packages Bar Chart */}
+        <div className="bg-white rounded p-4 shadow-md text-black col-span-full">
+  <h2 className="text-xl font-semibold mb-4">Top Common Packages</h2>
+  <ResponsiveContainer width="100%" height={400}>
+    <BarChart
+      data={commonPackages}
+      layout="vertical"
+      margin={{ top: 20, right: 30, left: 100, bottom: 20 }}
+    >
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis type="number" />
+      <YAxis
+        dataKey="name"
+        type="category"
+        width={200}
+        tick={{ fontSize: 12 }}
+        interval={0}
+      />
+      <Tooltip
+        contentStyle={{ backgroundColor: '#f0f0f0', border: 'none' }}
+        formatter={(value, name) => [value, "Devices using"]}
+      />
+      <Bar dataKey="count" fill="#00A6ED" barSize={24} radius={[0, 10, 10, 0]} />
+    </BarChart>
+  </ResponsiveContainer>
+</div>
+
       </div>
     </div>
   );
