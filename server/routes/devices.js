@@ -26,18 +26,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/:id', async (req, res) => {
-  try {
-    const device = await Device.findById(req.params.id);
-    if (!device) {
-      return res.status(404).json({ message: 'Device not found' });
-    }
-    res.json(device);
-  } catch (err) {
-    res.status(500).json({ message: err.message });
-  }
-});
-
 // GET /api/devices/common-packages
 router.get('/common-packages', async (req, res) => {
   try {
@@ -64,6 +52,20 @@ router.get('/common-packages', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
+
+router.get('/:id', async (req, res) => {
+  try {
+    const device = await Device.findById(req.params.id);
+    if (!device) {
+      return res.status(404).json({ message: 'Device not found' });
+    }
+    res.json(device);
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+});
+
 
 
 module.exports = router;
