@@ -10,7 +10,7 @@ const app = express();
 
 // Middleware
 const corsOptions = {
-  origin: 'https://sbom-viewer.onrender.com',  // ✅ Allow your frontend
+  origin: ['https://sbom-viewer-front.onrender.com', 'https://sbom-viewer.onrender.com'],  // ✅ Allow your frontend
   credentials: true,
 };
 
