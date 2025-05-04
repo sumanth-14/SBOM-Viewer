@@ -153,7 +153,7 @@ const StatisticsPage = () => {
 
         // Line Chart: SBOM Size Trend
         const trendData = devices.map((d, idx) => ({
-          name: `Device ${idx + 1}`,
+          name: d.name,
           sbomSize: d.sbom?.length || 0,
         }));
         setSbomTrend(trendData);
