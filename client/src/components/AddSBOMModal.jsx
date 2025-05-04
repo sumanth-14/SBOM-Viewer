@@ -24,7 +24,7 @@ const AddSBOMModal = ({ onClose, onUploadSuccess }) => {
     formData.append('operatingSystem', operatingSystem);
 
     try {
-      await axios.post(`${API_BASE_URL}api/upload`, formData, {
+      await axios.post('https://sbom-server.onrender.com/api/upload', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       setUploadSuccess(true);
